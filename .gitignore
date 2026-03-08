@@ -1,36 +1,38 @@
-*.annot
-*.cmo
-*.cma
-*.cmi
-*.a
-*.o
-*.cmx
-*.cmxs
-*.cmxa
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
 
-# Files containing detailed information about the compilation (generated
-# by `ocamlc`/`ocamlopt` when invoked using the option `-bin-annot`).
-# These files are typically useful for code inspection tools
-# (e.g. Merlin).
-*.cmt
-*.cmti
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
 
-# ocamlbuild and Dune default working directory
-_build/
+# Kotlin
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# ocamlbuild targets
-*.byte
-*.native
+# OS
+.DS_Store
+Thumbs.db
 
-# oasis generated files
-setup.data
-setup.log
+# Local config
+*.local.yaml
+*.local.yml
 
-# Merlin configuring file for Vim and Emacs
-.merlin
+# SQLite databases (local dev)
+*.db
+*.sqlite
+*.sqlite3
 
-# Dune generated files
-*.install
-
-# Local OPAM switch
-_opam/
+# Native binaries
+clawfare
+clawfare.exe
