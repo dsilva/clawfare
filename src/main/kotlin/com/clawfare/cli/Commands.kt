@@ -290,11 +290,27 @@ class FlightHistory : CliktCommand(name = "history", help = "Show price history"
     }
 }
 
+class ServeCommand : CliktCommand(
+    name = "serve",
+    help = "Start the flight-search web UI (http://localhost:8080)"
+) {
+    private val port by option("--port", "-p", help = "Port (or CLAWFARE_PORT)").int().default(0)
+
+    override fun run() {
+        val chosen = when {
+            port > 0 -> port
+            !System.getenv("CLAWFARE_PORT").isNullOrBlank() -> System.getenv("CLAWFARE_PORT").toInt()
+            else -> 8080
+        }
+        com.clawfare.web.Server.start(chosen)
+    }
+}
+
 // Helper
 
-private fun getDatabase(): Database {
+internal fun defaultDatabasePath(): String {
     val home = System.getProperty("user.home")
-    val dbPath = System.getenv("CLAWFARE_DB") 
-        ?: "$home/.local/share/clawfare/clawfare.db"
-    return Database(dbPath)
+    return System.getenv("CLAWFARE_DB") ?: "$home/.local/share/clawfare/clawfare.db"
 }
+
+private fun getDatabase(): Database = Database(defaultDatabasePath())

@@ -22,6 +22,15 @@ object Airlines {
         "EI", // Aer Lingus
         "VS", // Virgin Atlantic
         "DY", // Norwegian
+        "FI", // Icelandair
+        "WK", // Edelweiss
+        "SN", // Brussels Airlines
+        "LO", // LOT
+        "DE", // Condor
+        "OS", // Austrian
+        "A3", // Aegean
+        "EN", // Air Dolomiti
+        "2L", // Helvetic
     )
     
     val japanese = setOf(
