@@ -569,6 +569,9 @@ footer{color:var(--muted);font-size:12px;padding:0 28px 28px}
     renderHeader();
     renderSummary();
     renderLegend();
+    markSeg("cabinSeg", state.cabin);
+    markSeg("sortSeg", state.sort);
+    buildDynamicSegs();
     $("fresh").textContent = result.fetchedAt ? ("Data " + result.fetchedAt) : "";
     if (tab === "grid") renderGrid();
     else if (tab === "itineraries") renderTable();
