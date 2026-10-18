@@ -16,7 +16,8 @@ fun main(args: Array<String>) {
                 FlightAdd(),
                 FlightRefresh(),
                 FlightHistory()
-            )
+            ),
+            ServeCommand()
         )
         .main(args)
 }

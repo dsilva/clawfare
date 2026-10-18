@@ -13,6 +13,7 @@ build/
 # Kotlin
 *.class
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar
 *.ear
@@ -24,15 +25,22 @@ build/
 .DS_Store
 Thumbs.db
 
-# Local config
+# Local config and secrets
 *.local.yaml
 *.local.yml
+.env
+.env.*
+!.env.example
+
+# Flight-search cache and saved searches (may contain fare payloads)
+.cache/
+cache/
 
 # SQLite databases (local dev)
 *.db
 *.sqlite
 *.sqlite3
 
-# Native binaries
-clawfare
-clawfare.exe
+# Native binaries at the repo root. Anchored so this does not ignore com/clawfare sources.
+/clawfare
+/clawfare.exe
